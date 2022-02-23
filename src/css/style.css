@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope');
+
+:root {
+    --black: #000000;
+    --black_lighter: #131211;
+    --grey_darker: #202020;
+    --grey_lighter: #959595;
+    --white: #FFFFFF;
+}
+
+* {
+    font-family: "Manrope", sans-serif;
+}
