@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
-import {HomePart} from "../../../app/interface";
-import {HomePartData} from "../../../app/data/HomePart";
-import {InView} from "react-intersection-observer";
+import React from 'react';
 
 export default function HomeProject() {
-    return <div />
+    return <div className={"relative flex flex-col w-full h-full bg-black"}>
+
+    </div>
 }

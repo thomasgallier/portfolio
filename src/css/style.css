@@ -47,7 +47,6 @@ button {
 }
 
 button:hover {
-    background-color: var(--black);
     border-color: var(--white);
 }
 
@@ -102,4 +101,27 @@ h4 {
     button {
         padding: .75em 2em !important;
     }
+}
+
+
+.move-bg {
+    -webkit-animation: move-bg-animation 5s ease infinite;
+    -moz-animation: move-bg-animation 5s ease infinite;
+    animation: move-bg-animation 5s ease infinite;
+}
+
+@-webkit-keyframes move-bg-animation {
+    0%{background-position:0 0}
+    50%{background-position:25% 25%}
+    100%{background-position:0 0}
+}
+@-moz-keyframes move-bg-animation {
+    0%{background-position:0 0}
+    50%{background-position:25% 25%}
+    100%{background-position:0 0}
+}
+@keyframes move-bg-animation {
+    0%{background-position:0 0}
+    50%{background-position:25% 100%}
+    100%{background-position:0 0}
 }

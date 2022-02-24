@@ -18,7 +18,7 @@ export default function HomeContent(props: { onUpdateActivePart: (part: HomePart
                     {({ inView, ref, entry }) =>
                         <div
                             id={part.label}
-                            className={`snap-center h-full w-full bg-black text-white`}
+                            className={`snap-center h-full w-full text-white`}
                             ref={ref}>
                             {part.component}
                         </div>

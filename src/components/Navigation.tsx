@@ -16,16 +16,16 @@ export default function Navigation(props: { onClickNewPart: (part: HomePart) => 
 
     const { onClickNewPart, activePart } = props
 
-    const name = <p className={"text-5xl thin"}>Gallier Thomas</p>
+    const name = <p className={"text-xl md:text-2xm lg:text-5xl thin"}>Gallier Thomas</p>
     const developer = <p className={"text-sm thin hidden lg:block"}>Mobile Developer</p>
 
     return (
-        <div className={"fixed top-8 left-8 flex flex-col z-50 text-white"}>
+        <div className={"fixed top-8 left-4 lg:left-16 right-4 lg:right-16 flex flex-col lg:flex-row gap-y-3 justify-between z-50 text-white"}>
             <div className={"flex flex-col gap-y-2"}>
                 { name }
                 { developer }
             </div>
-            <div className={"flex flex-col gap-y-4 mt-6 lg:mt-10"}>
+            <div className={"flex flex-row gap-x-4"}>
                 { HomePartData().map((homePart, index) =>
                     <NavigationPoint
                         key={index}
