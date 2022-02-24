@@ -1,3 +1,9 @@
+@charset "utf-8";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Manrope');
 
 :root {
@@ -8,6 +14,9 @@
     --white: #FFFFFF;
 }
 
+html {
+    overflow-y: hidden;
+}
 * {
     font-family: "Manrope", sans-serif;
 }

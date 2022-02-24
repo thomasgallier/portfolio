@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './css/reset.css';
 import './css/style.css';
+import './css/reset.css';
 
-import Home from './Home';
+import Home from './screen/Home';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
