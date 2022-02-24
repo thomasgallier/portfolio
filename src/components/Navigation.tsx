@@ -2,23 +2,40 @@ import React from 'react';
 import {HomePart} from "../app/interface";
 import {HomePartData} from "../app/data/HomePart";
 
-function NavigationPoint(props: { index: number; active: boolean; }) {
-    const { index, active } = props
+function NavigationPoint(props: { onClick: () => void; label: string; index: number; active: boolean; }) {
+    const { onClick, label, index, active } = props
 
-    const activeStyle = () => active ? 'h-4 w-4 bg-white' : 'h-3 w-3 bg-grey_lighter'
+    const activeStyleText = () => active ? 'opacity-100' : 'opacity-50'
 
-    return <span key={index} className={"rounded-full opacity-75 " + activeStyle() } />
+    const transition = ' transition duration-500 ease-in-out '
+
+    return <p key={index} className={'cursor-pointer h-4 font-bold text-left text-sm hover:opacity-100 text-white ' + transition + activeStyleText()} onClick={onClick}>{label}</p>
 }
 
-export default function Navigation(props: { activePart: HomePart }) {
+export default function Navigation(props: { onClickNewPart: (part: HomePart) => void; activePart: HomePart; }) {
 
-    const { activePart } = props
+    const { onClickNewPart, activePart } = props
+
+    const name = <p className={"text-5xl thin"}>Gallier Thomas</p>
+    const developer = <p className={"text-sm thin hidden lg:block"}>Mobile Developer</p>
 
     return (
-        <div className={"fixed top-0 bottom-0 right-8 flex flex-col justify-center items-center gap-y-4 z-50 text-white"}>
-            { HomePartData().map((homePart, index) =>
-                <NavigationPoint key={index} index={index} active={homePart.label === activePart.label} />
-            )}
+        <div className={"fixed top-8 left-8 flex flex-col z-50 text-white"}>
+            <div className={"flex flex-col gap-y-2"}>
+                { name }
+                { developer }
+            </div>
+            <div className={"flex flex-col gap-y-4 mt-6 lg:mt-10"}>
+                { HomePartData().map((homePart, index) =>
+                    <NavigationPoint
+                        key={index}
+                        onClick={() => onClickNewPart(homePart)}
+                        label={homePart.label}
+                        index={index}
+                        active={homePart.label === activePart.label}
+                    />
+                )}
+            </div>
         </div>
     );
 }

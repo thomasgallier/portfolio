@@ -4,14 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 :root {
-    --black: #000000;
-    --black_lighter: #131211;
-    --grey_darker: #202020;
-    --grey_lighter: #959595;
+    --black: #202020;
+    --black_lighter: #353535;
+    --grey: #4F4F4F;
+    --grey_lighter: #B1B1B1;
+    --white_darker: #F5F5F5;
     --white: #FFFFFF;
+    --blue: #1E68F9;
 }
 
 html {
@@ -19,4 +21,85 @@ html {
 }
 * {
     font-family: "Manrope", sans-serif;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar { display: none; }
+
+
+body {
+    font-weight: 200 !important;
+    font-size: 1em !important;
+    line-height: 1.375em !important;
+}
+
+h1, h2, h3, h4, button, p, a {
+    white-space: pre-wrap;
+}
+
+button {
+    border-radius: 4px !important;
+    padding: .75em 5em;
+    background-color: var(--white);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    border: solid transparent;
+}
+
+button:hover {
+    background-color: var(--black);
+    border-color: var(--white);
+}
+
+h1, h2, h3 {
+    font-weight: 500 !important;
+}
+
+h1 {
+    font-size: 3em !important;
+    line-height: 1.05em !important;
+}
+
+h2 {
+    font-size: 2.25em !important;
+    line-height: 1.25em !important;
+}
+
+h3 {
+    font-size: 1.75em !important;
+    line-height: 1.25em !important;
+}
+
+h4 {
+    font-weight: 400 !important;
+    font-size: 1.125em !important;
+    line-height: 1.222em !important;
+}
+
+@media screen and (max-width: 480px) {
+    body { line-height: 1.25em !important; }
+
+    h1 {
+        font-size: 2em !important;
+        line-height: 1.25em !important;
+    }
+
+    h2 {
+        font-size: 1.625em !important;
+        line-height: 1.15em !important;
+    }
+
+    h3 {
+        font-size: 1.375em !important;
+        line-height: 1.135em !important;
+    }
+
+    h4, button {
+        font-size: 1.125em !important;
+        line-height: 1.111em !important;
+    }
+
+    button {
+        padding: .75em 2em !important;
+    }
 }

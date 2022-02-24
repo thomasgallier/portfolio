@@ -3,17 +3,17 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'main-1': "url('/src/assets/images/main/1.jpg')",
-        'main-2': "url('/src/assets/images/main/2.jpg')",
-        'main-3': "url('/src/assets/images/main/3.jpg')",
+        'main-introduction': "url('/src/assets/images/main/introduction.png')",
       }
     },
     colors: {
-      black: '#000000',
-      black_lighter: '#131211',
-      grey: '#202020',
-      grey_lighter: '#959595',
+      black: '#202020',
+      black_lighter: '#353535',
+      grey: '#4F4F4F',
+      grey_lighter: '#B1B1B1',
+      white_darker: '#F5F5F5',
       white: '#FFFFFF',
+      blue: '#1E68F9'
     },
   },
   plugins: [],
