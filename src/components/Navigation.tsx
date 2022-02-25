@@ -1,6 +1,7 @@
 import React from 'react';
 import {HomePart} from "../app/interface";
-import {HomePartData} from "../app/data/HomePart";
+import {HomePartData} from "../app/data";
+import {Strings} from "../assets/Strings";
 
 function NavigationPoint(props: { onClick: () => void; label: string; index: number; active: boolean; }) {
     const { onClick, label, index, active } = props
@@ -16,21 +17,14 @@ export default function Navigation(props: { onClickNewPart: (part: HomePart) => 
 
     const { onClickNewPart, activePart } = props
 
-    const name = <p className={"text-xl md:text-2xm lg:text-5xl thin"}>Gallier Thomas</p>
-    const developer = <p className={"text-sm thin hidden lg:block"}>Mobile Developer</p>
-
     return (
-        <div className={"fixed top-8 left-4 lg:left-16 right-4 lg:right-16 flex flex-col lg:flex-row gap-y-3 justify-between z-50 text-white"}>
-            <div className={"flex flex-col gap-y-2"}>
-                { name }
-                { developer }
-            </div>
-            <div className={"flex flex-row gap-x-4"}>
+        <div className={"fixed top-0 right-0 py-6 px-4 lg:px-16 lg:w-max w-full flex flex-col lg:flex-row lg:gap-y-3 justify-end z-50 text-white items-center"}>
+            <div className={"flex flex-row gap-x-4 justify-center"}>
                 { HomePartData().map((homePart, index) =>
                     <NavigationPoint
                         key={index}
                         onClick={() => onClickNewPart(homePart)}
-                        label={homePart.label}
+                        label={homePart.label.toString()}
                         index={index}
                         active={homePart.label === activePart.label}
                     />

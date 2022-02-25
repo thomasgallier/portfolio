@@ -3,7 +3,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'main-introduction': "url('/src/assets/images/main/background.jpg')",
+        'main-introduction': "url('/src/assets/images/main/introduction.gif')",
+        'project-surglab': "url('/src/assets/images/project/surglab.jpg')",
+        'project-runly': "url('/src/assets/images/project/runly.png')",
       }
     },
     colors: {

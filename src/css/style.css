@@ -6,6 +6,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
+html, body {
+    overscroll-behavior: none;
+}
+
 :root {
     --black: #202020;
     --black_lighter: #353535;
@@ -16,9 +20,6 @@
     --blue: #1E68F9;
 }
 
-html {
-    overflow-y: hidden;
-}
 * {
     font-family: "Manrope", sans-serif;
     -ms-overflow-style: none;
@@ -34,6 +35,11 @@ body {
     line-height: 1.375em !important;
 }
 
+a {
+    font-style: italic;
+    text-transform: uppercase;
+}
+
 h1, h2, h3, h4, button, p, a {
     white-space: pre-wrap;
 }
@@ -42,15 +48,15 @@ button {
     border-radius: 4px !important;
     padding: .75em 5em;
     background-color: var(--white);
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    border: solid transparent;
+    box-shadow: 0 1px 3px 0 rgba(0 0 0 0.1), 0 1px 2px -1px rgba(0 0 0 0.1);
 }
 
 button:hover {
-    border-color: var(--white);
+    background-color: var(--white);
+    color: var(--black);
 }
 
-h1, h2, h3 {
+h1, h2, h3, button {
     font-weight: 500 !important;
 }
 
@@ -74,6 +80,17 @@ h4 {
     font-size: 1.125em !important;
     line-height: 1.222em !important;
 }
+
+.project-image {
+    height: 65vh !important;
+}
+
+.move-bg {
+    -webkit-animation: move-bg-animation 30s ease infinite;
+    -moz-animation: move-bg-animation 30s ease infinite;
+    animation: move-bg-animation 30s ease infinite;
+}
+
 
 @media screen and (max-width: 480px) {
     body { line-height: 1.25em !important; }
@@ -101,27 +118,24 @@ h4 {
     button {
         padding: .75em 2em !important;
     }
-}
 
-
-.move-bg {
-    -webkit-animation: move-bg-animation 5s ease infinite;
-    -moz-animation: move-bg-animation 5s ease infinite;
-    animation: move-bg-animation 5s ease infinite;
+    .project-image {
+        height: 30vh !important;
+    }
 }
 
 @-webkit-keyframes move-bg-animation {
     0%{background-position:0 0}
-    50%{background-position:25% 25%}
+    50%{background-position:50% 50%}
     100%{background-position:0 0}
 }
 @-moz-keyframes move-bg-animation {
     0%{background-position:0 0}
-    50%{background-position:25% 25%}
+    50%{background-position:50% 50%}
     100%{background-position:0 0}
 }
 @keyframes move-bg-animation {
     0%{background-position:0 0}
-    50%{background-position:25% 100%}
+    50%{background-position:50% 50%}
     100%{background-position:0 0}
 }
